@@ -94,14 +94,21 @@
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (obj) => {
-  const restaurantObj = {
+  const restaurantObj = { // alguns colegas usaram Objeto pra 'nomear' esse obj - não entendi, mas parece q com isso não precisa do return.
     fetchMenu: () => obj,
     consumption: [],
     order: (str) => {
       restaurantObj.consumption.push(str);
     },
+    pay: () => {
+      const food = Object.values(restaurantObj.fetchMenu().food);
+      const drink = Object.values(restaurantObj.fetchMenu().drink);
+    },
   };
+  // console.log(Object.values(restaurantObj.food));
+  // console.log(Object.values(restaurantObj.fetchMenu().food));
   return restaurantObj;
 };
+// createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
 
 module.exports = createMenu;
