@@ -99,11 +99,11 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     // ```
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
-    // it('Verifica 5', () => {
-    //   const objetoRetornado = createMenu({ food: {}, drink: {} });
-    //   objetoRetornado.order("coxinha");
-    //   expect(objetoRetornado.consumption).toEqual(["coxinha"]);
-    // });
+    it('Verifica 5', () => {
+      const objetoRetornado = createMenu({a: 1})
+      objetoRetornado.order("coxinha");
+      expect(objetoRetornado.consumption).toEqual(["coxinha"]);
+    });
 
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
