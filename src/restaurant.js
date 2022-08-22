@@ -103,6 +103,14 @@ const createMenu = (obj) => {
     pay: () => {
       const food = Object.values(restaurantObj.fetchMenu().food);
       const drink = Object.values(restaurantObj.fetchMenu().drink);
+      let sum = 0;
+      for (let index of food) {
+        sum += index;
+      }
+      for (let index of drink) {
+        sum += index;
+      }
+      return sum;
     },
   };
   // console.log(Object.values(restaurantObj.food));
